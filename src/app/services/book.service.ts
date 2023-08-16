@@ -19,4 +19,8 @@ export class BookService {
   deleteBook(id : any) : Observable<IBook> {
     return this._httpClient.delete<IBook>(`${this.BASE_URL}/${id}`);
   }
+
+  addBook(book : IBook) : Observable<IBook> {
+    return this._httpClient.post<IBook>(this.BASE_URL, book);
+  }
 }

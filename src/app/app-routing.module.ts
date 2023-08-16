@@ -6,6 +6,7 @@ import { BooksComponent } from './components/books/books.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path : 'addNewBook',  
     component: AddNewBookComponent
+  },
+  {
+    path : 'book-details/:id',  
+    component: BookDetailsComponent
   },
   {
     path: 'error',

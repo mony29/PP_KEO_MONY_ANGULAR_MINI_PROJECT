@@ -12,6 +12,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
+import { ReactiveFormsModule} from '@angular/forms';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { AddNewBookComponent } from './components/add-new-book/add-new-book.comp
     LoginComponent,
     NavbarComponent,
     NotFoundComponent,
-    AddNewBookComponent
+    AddNewBookComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
