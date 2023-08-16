@@ -3,14 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { BooksComponent } from './components/books/books.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './services/data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    BooksComponent,
+    LoginComponent,
+    NavbarComponent,
+    NotFoundComponent,
+    AddNewBookComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataService),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
