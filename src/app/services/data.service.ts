@@ -37,7 +37,7 @@ export class DataService implements InMemoryDbService {
         category: 'Programming'
       },
       {
-        id: 1,
+        id: 4,
         title: 'Spring',
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sit repellendus sapiente debitis expedita, rerum quod nobis in nostrum, minus, ratione eveniet esse perspiciatis? Dignissimos iste fugit nihil. Delectus, voluptate.",
         bookImage: '../../assets/book1.png',
@@ -45,21 +45,21 @@ export class DataService implements InMemoryDbService {
         category: 'Programming'
       },
       {
-        id: 2,
+        id: 5,
         title: 'Angular',
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sit repellendus sapiente debitis expedita, rerum quod nobis in nostrum, minus, ratione eveniet esse perspiciatis? Dignissimos iste fugit nihil. Delectus, voluptate.",
         bookImage: '../../assets/book2.png',
         author: 'Yuo',
         category: 'Programming'
       },
-      {
-        id: 3,
-        title: 'Angular',
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sit repellendus sapiente debitis expedita, rerum quod nobis in nostrum, minus, ratione eveniet esse perspiciatis? Dignissimos iste fugit nihil. Delectus, voluptate.",
-        bookImage: '../../assets/book3.png',
-        author: 'Yuo',
-        category: 'Programming'
-      }
+      // {
+      //   id: 6,
+      //   title: 'Angular',
+      //   description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sit repellendus sapiente debitis expedita, rerum quod nobis in nostrum, minus, ratione eveniet esse perspiciatis? Dignissimos iste fugit nihil. Delectus, voluptate.",
+      //   bookImage: '../../assets/book3.png',
+      //   author: 'Yuo',
+      //   category: 'Programming'
+      // }
     ]
     return { books };
   }

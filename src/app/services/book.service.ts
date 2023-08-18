@@ -23,4 +23,8 @@ export class BookService {
   addBook(book : IBook) : Observable<IBook> {
     return this._httpClient.post<IBook>(this.BASE_URL, book);
   }
+
+  getBookById(id : any) : Observable<IBook> {
+    return this._httpClient.get<IBook>(`${this.BASE_URL}/${id}`);
+  }
 }

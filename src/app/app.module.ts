@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

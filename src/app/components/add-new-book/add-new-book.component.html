@@ -13,22 +13,21 @@
             </div>
             <div class="grid grid-cols-2 border-2 px-5">
                 <div class="flex items-center justify-center h-64">
-                    <img class="w-48 h-60 cursor-pointer" src="../../../assets/book2.png" alt="">
+                    <img class="w-48 h-60 cursor-pointer" src="../../../assets/book2.png" alt="book-image">
                 </div>
                 <div class="h-64">
                     <div class="mb-2">
                         <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Title</label>
-                        <input type="text" id="title" formControlName="title"
+                        <input type="text" id="title" formControlName="title" placeholder="title"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
                     <div class="mb-2">
-                        <label for="authro" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label for="author" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Author</label>
-                        <input type="text" id="author" formControlName="author"
+                        <input type="text" id="author" formControlName="author" placeholder="author"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
-
                     <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         Category
                     </label>
@@ -48,11 +47,14 @@
             <textarea id="description" rows="4" formControlName="description"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Leave a comment..."></textarea>
-
-            <button routerLink="/" type="submit"
+            <button type="submit"
                 class="mt-2 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">
                 Create
             </button>
+            <!-- <a type="submit"
+                class="mt-2 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">
+                Create 
+            </a> -->
         </div>
     </form>
 </div>
@@ -65,7 +67,7 @@
         </div>
         <div>
             <input type="text" id="author" formControlName="author">  
-        </div> <br>
+        </div>
         <button type="submit" class="border-2 p-3">Add</button>
     </form>
 </div> -->

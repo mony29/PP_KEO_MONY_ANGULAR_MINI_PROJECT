@@ -20,7 +20,7 @@ export class BooksComponent {
 
   getBooks() {
     this._bookService.getBooks().subscribe((e) => {
-      console.log(e);
+      // console.log(e);
       this.bookData = e;
     })
   }
