@@ -1,3 +1,5 @@
+
+
 <div class="m-20 border-gray-500 border-2 rounded-sm">
     <p class="font-bold text-2xl text-center mt-10 mb-10">The new story</p>
     <div class="grid grid-cols-2 justify-items-center items-center mt-5">
@@ -44,25 +46,11 @@
 
 </div>
 
-<!-- 
-<div *ngIf="showContent">
-    <input type="text" placeholder="author">
-</div>
-<br>
 
-<button (click)="showContent = !showContent"
-    class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
-    Edit
-</button> -->
 
 
 
 <div *ngIf="isModalOpen" (closeModal)="closeModal()">
-
-
-
-
-
 
     <div class="fixed inset-0 flex items-center justify-center z-50">
         <div class="bg-white rounded-lg p-6 shadow-xl w-80">
@@ -97,6 +85,4 @@
         </div>
     </div>
     <div class="fixed inset-0 bg-gray-100 opacity-50"></div>
-
-
 </div>
