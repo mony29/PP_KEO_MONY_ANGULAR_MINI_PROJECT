@@ -5,13 +5,13 @@
     <!-- arrow back  icon-->
     <img (click)="goBack()" class="w-10 h-10 cursor-pointer" src="../../../assets/arrow-back.png" alt="">
   </div>
-  <!-- form input  -->
+  <!-- book details  -->
   <form>
     <div class="px-72 h-screen  border-2 absolute top-40 items-center left-48 right-48 bg-white rounded-lg">
       <div class="relative">
-        <div class="text-2xl">
+        <div class="text-2xl mt-8">
           <h1 class="text-3xl font-bold">{{ tempBook.title}}</h1>
-          <p class="text-lg font-bold text-[#FFCA42]">By {{ tempBook.author }}</p>
+          <p class="text-md font-bold text-[#FFCA42]">By {{ tempBook.author }}</p>
           <span class="text-sm ">{{ tempBook.category }}</span>
         </div>
       </div>
