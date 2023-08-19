@@ -1,8 +1,8 @@
-<div class="grid grid-cols-2 p-10">
+<div class="grid grid-cols-2 px-48 py-10">
 
   <div class="bg-[#1B3764] rounded-lg flex items-center justify-center h-[550px]">
     <div class="">
-      <img src="../../../assets//login/avatar.png" alt="avatar-image" class="w-36">
+      <img src="../../../assets//login/avatar.png" alt="avatar-image" class="w-56">
       <span class="text-white text-2xl text-center">
         <p class="text-lg">Welcome MYBOOK <br>
           <span class="text-sm">
@@ -14,10 +14,12 @@
   </div>
 
   <!-- login form -->
-  <div class="bg-white bg-opacity-10 px-10 border-2 rounded-lg">
-    <img src="../../../assets//login/book.png" alt="">
-    <h1 class="text-2xl text-center font-bold mt-10">WELCOME</h1>
-    <form (ngSubmit)="handleSubmit()" [formGroup]="reactiveForm">
+  <div class="px-10 border-2 rounded-lg">
+    <div class="mt-32">
+      <img class="block ml-auto mr-auto h-8" src="../../../assets//login/book.png" alt="">
+    </div>
+    <h1 class="text-3xl text-center font-bold">WELCOME</h1>
+    <form class="items-center justify-center " (ngSubmit)="handleSubmit()" [formGroup]="reactiveForm">
 
       <!-- check validation on email & address -->
       <ng-container formGroupName="emailAddress">
