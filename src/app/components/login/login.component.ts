@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, ValidationErrors, Validators, FormArray, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +19,7 @@ export class LoginComponent {
       {
         password: new FormControl(null,
           [Validators.required,
-          Validators.minLength(6),
-          this.isRestrictedName.bind(this) // .bind(this) check self validation
+          Validators.minLength(6)
           ]),
         emailAddress: new FormGroup({ // use FormGroup to group FormControls
           email: new FormControl(null, 
@@ -31,26 +31,14 @@ export class LoginComponent {
   }
 
 
- 
-  // get hobby data
-  get hobbiesControls(){
-    return (<FormArray>this.reactiveForm?.get('hobbies'))?.controls;
+  constructor(private _authService: AuthService){}
+
+  login() {
+    this._authService.login();
   }
 
-
-
-  handleSubmit() {
-    // this.handleSubmit
-    console.log(this.reactiveForm.value)
-  }
-
-  // AbstractControl is the main class for controlling the behavior and properties of
-  // FormGroup, FormControl and FormArray
-  isRestrictedName(control: AbstractControl): ValidationErrors | null {
-    if (this.restrictName.includes(control.value)) {
-      return { nameIsRestricted: true }
-    }
-    return null;
+  logout(){
+    this._authService.logout();
   }
 
 

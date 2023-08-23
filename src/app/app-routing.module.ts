@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { BookGuardService } from './services/book-guard.service';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
       },
       { 
         path: 'books', 
-        component: BooksComponent 
+        component: BooksComponent,
+        canActivate: [BookGuardService]
       },
       {
         path: 'login', 
