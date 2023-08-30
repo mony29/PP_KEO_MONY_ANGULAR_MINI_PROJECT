@@ -12,9 +12,11 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
-import { ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CategoryFilterPipe } from './pipes/category-filter.pipe';
+import { FilterNamePipe } from './pipes/filter-name.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     NavbarComponent,
     NotFoundComponent,
     AddNewBookComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    CategoryFilterPipe,
+    FilterNamePipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     HttpClientInMemoryWebApiModule.forRoot(DataService),
     HttpClientModule,
     ReactiveFormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

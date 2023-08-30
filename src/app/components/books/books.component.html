@@ -1,7 +1,7 @@
 <!-- button add book -->
 <div class="mt-5 mb-5 text-start ml-5">
     <button type="button" routerLink="/addNewBook"
-        class="text-white bg-green-500 border border-gray-300 focus:outline-none hover:bg-green-700 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600  dark:hover:border-gray-600 dark:focus:ring-gray-700">
+        class="text-white bg-green-500 border border-gray-300 focus:outline-none hover:bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
         + Add New Book
     </button>
 </div>
@@ -24,12 +24,9 @@
         <aside id="sidebar-multi-level-sidebar"
             class="z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
             <div class="h-full px-3 py-4 overflow-y-auto bg-gray-200 dark:bg-gray-800">
-
                 <ul class="space-y-2 font-medium">
                     <li>
                         <form>
-                            <label for="default-search"
-                                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -38,7 +35,8 @@
                                             stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </div>
-                                <input type="search" id="default-search"
+                                <input type="search" id="default-search" formControlName="search"
+                                    [(ngModel)]="filterText"
                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg"
                                     placeholder="Search category" required>
                             </div>
@@ -46,29 +44,31 @@
                     </li>
                     <!-- listing all category, the duplicated should be display once -->
                     <ng-container>
-                        <div *ngFor="let book1 of bookData">
+                        <!-- <div *ngFor="let book1 of bookData | filterName : filteredCategory"> -->
+                            <div *ngFor="let book1 of bookData | filterBookCategory : filterText">
                             <li>
                                 <button type="button"
                                     class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                     aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                                     <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold">
+                                        <!-- {{ book1 | json }}  -->
                                         {{ book1.category }}
                                     </span>
                                 </button>
                                 <!-- listing all books by category -->
-                                <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                                <!-- <ul id="dropdown-example" class="hidden py-2 space-y-2">
                                     <ng-container>
                                         <div *ngFor="let book2 of bookData">
                                             <li>
                                                 <a href="#"
                                                     class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                                                     {{ book2.title }}
-                                                    <!-- should be listing by category -->
+                                                  
                                                 </a>
                                             </li>
                                         </div>
                                     </ng-container>
-                                </ul>
+                                </ul> -->
                             </li>
                         </div>
                     </ng-container>
@@ -77,9 +77,9 @@
         </aside>
     </div>
     <!-- content -->
-    <div>    
-        <div class=" border-gray-500 border-2 rounded-sm">
-            <p class="font-bold text-2xl text-center mb-10">The new story</p>
+    <div>
+        <div class=" border-gray-200 shadow-xl border-2 rounded-lg pt-5">
+            <p class="font-extrabold text-2xl text-center mb-5 uppercase">All Genres</p>
             <div class="grid grid-cols-2 justify-items-center items-center mt-5 gap-5 mx-5">
                 <ng-container>
                     <div *ngFor="let book of bookData">
@@ -89,7 +89,7 @@
                                 src="{{book.bookImage}}" alt="book-image">
                             <div class="flex flex-col justify-between p-4 leading-normal">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ book.title }}
+                                    {{ book.title | categoryFilter : 10 }}
                                 </h5>
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                                     {{ book.author}}

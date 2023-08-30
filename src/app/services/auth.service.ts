@@ -7,7 +7,7 @@ export class AuthService {
 
   constructor() { }
 
-  logged : boolean = false;
+  logged : boolean = false; // change this to true to not guard requests
 
   login(){
     this.logged = true;

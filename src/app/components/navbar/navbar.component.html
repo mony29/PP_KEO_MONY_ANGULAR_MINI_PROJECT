@@ -1,35 +1,37 @@
-<nav class="relative  dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600">
-<!-- <nav class="relative"> -->
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<nav class="relative z-10 dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600">
+  <!-- <nav class="relative"> -->
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a routerLink="/" class="flex items-center">
-        <span class="self-center font-extrabold text-2xl whitespace-nowrap dark:text-white">MYBOOK</span>
+      <span class="self-center font-extrabold text-2xl whitespace-nowrap dark:text-white">MYBOOK</span>
     </a>
     <div class="flex md:order-2">
-        <button routerLink="/login" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Login
-        </button>
+      <button routerLink="/login" type="button"
+        class="bg-blue-500 text-white hover:bg-blue-700 font-medium rounded text-sm px-4 py-2 text-center mr-3">
+        Login
+      </button>
     </div>
 
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <ul
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a routerLink="/" routerLinkActive="linkActive" [routerLinkActiveOptions]="{exact : true}" 
-          class="block py-2 pl-3 pr-4 text-gray-900  rounded " aria-current="page">
+          <a routerLink="/" routerLinkActive="linkActive" [routerLinkActiveOptions]="{exact : true}"
+            class="block py-2 pl-3 pr-4 text-gray-900  rounded " aria-current="page">
             Home</a>
         </li>
         <li>
-          <a routerLink="/books" routerLinkActive="linkActive" 
-          class="block py-2 pl-3 pr-4 text-gray-900 rounded ">
+          <a routerLink="/books" routerLinkActive="linkActive" class="block py-2 pl-3 pr-4 text-gray-900 rounded ">
             Books</a>
         </li>
       </ul>
     </div>
-    
-    </div>
-  </nav>
-  <!-- <div class="h-80"  style="background-image: url('../../../assets/landing.png'); background-repeat: no-repeat;">
-   
-  </div> -->
-  
+  </div>
+</nav>
 
+<!-- <div class="absolute bg-gray-200 w-full top-0 right-0 grid justify-items-end z-0">
+  <img class="h-96" src="../../../assets/landing.png" alt="">
+</div> -->
+
+<div>
   <router-outlet></router-outlet>
+</div>
